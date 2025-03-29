@@ -1,0 +1,287 @@
+/*!***********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./assets/sass/style.scss ***!
+  \***********************************************************************************************************************************************************/
+@charset "UTF-8";
+.dahlia-icon.di-extrasmall {
+  width: 1rem;
+  height: 1rem;
+}
+.dahlia-icon.di-small {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.dahlia-icon.di-large {
+  width: 2rem;
+  height: 2rem;
+}
+.dahlia-icon.di-extralarge {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Clases generadas automáticamente para los iconos */
+.dahlia-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background: black;
+}
+
+.dahlia-ancient-temple {
+  -webkit-mask-image: url(icons/ancient-temple.svg);
+  mask-image: url(icons/ancient-temple.svg);
+}
+
+.dahlia-animal-heart {
+  -webkit-mask-image: url(icons/animal-heart.svg);
+  mask-image: url(icons/animal-heart.svg);
+}
+
+.dahlia-animal-paw {
+  -webkit-mask-image: url(icons/animal-paw.svg);
+  mask-image: url(icons/animal-paw.svg);
+}
+
+.dahlia-ballon {
+  -webkit-mask-image: url(icons/ballon.svg);
+  mask-image: url(icons/ballon.svg);
+}
+
+.dahlia-bat-silhouette {
+  -webkit-mask-image: url(icons/bat-silhouette.svg);
+  mask-image: url(icons/bat-silhouette.svg);
+}
+
+.dahlia-butterfly-wing {
+  -webkit-mask-image: url(icons/butterfly-wing.svg);
+  mask-image: url(icons/butterfly-wing.svg);
+}
+
+.dahlia-castle {
+  -webkit-mask-image: url(icons/castle.svg);
+  mask-image: url(icons/castle.svg);
+}
+
+.dahlia-chess-pieces {
+  -webkit-mask-image: url(icons/chess-pieces.svg);
+  mask-image: url(icons/chess-pieces.svg);
+}
+
+.dahlia-childrens-story {
+  -webkit-mask-image: url(icons/childrens-story.svg);
+  mask-image: url(icons/childrens-story.svg);
+}
+
+.dahlia-christmas-tree {
+  -webkit-mask-image: url(icons/christmas-tree.svg);
+  mask-image: url(icons/christmas-tree.svg);
+}
+
+.dahlia-cozy-cottage {
+  -webkit-mask-image: url(icons/cozy-cottage.svg);
+  mask-image: url(icons/cozy-cottage.svg);
+}
+
+.dahlia-crossed-swords {
+  -webkit-mask-image: url(icons/crossed-swords.svg);
+  mask-image: url(icons/crossed-swords.svg);
+}
+
+.dahlia-crown-tale {
+  -webkit-mask-image: url(icons/crown-tale.svg);
+  mask-image: url(icons/crown-tale.svg);
+}
+
+.dahlia-dolphin-wave {
+  -webkit-mask-image: url(icons/dolphin-wave.svg);
+  mask-image: url(icons/dolphin-wave.svg);
+}
+
+.dahlia-drum-beat {
+  -webkit-mask-image: url(icons/drum-beat.svg);
+  mask-image: url(icons/drum-beat.svg);
+}
+
+.dahlia-dueling-swords {
+  -webkit-mask-image: url(icons/dueling-swords.svg);
+  mask-image: url(icons/dueling-swords.svg);
+}
+
+.dahlia-earth-globe {
+  -webkit-mask-image: url(icons/earth-globe.svg);
+  mask-image: url(icons/earth-globe.svg);
+}
+
+.dahlia-electric-mind {
+  -webkit-mask-image: url(icons/electric-mind.svg);
+  mask-image: url(icons/electric-mind.svg);
+}
+
+.dahlia-fairy-tale {
+  -webkit-mask-image: url(icons/fairy-tale.svg);
+  mask-image: url(icons/fairy-tale.svg);
+}
+
+.dahlia-fantasy-story {
+  -webkit-mask-image: url(icons/fantasy-story.svg);
+  mask-image: url(icons/fantasy-story.svg);
+}
+
+.dahlia-flying-saucer {
+  -webkit-mask-image: url(icons/flying-saucer.svg);
+  mask-image: url(icons/flying-saucer.svg);
+}
+
+.dahlia-friendship {
+  -webkit-mask-image: url(icons/friendship.svg);
+  mask-image: url(icons/friendship.svg);
+}
+
+.dahlia-ghost-shadow {
+  -webkit-mask-image: url(icons/ghost-shadow.svg);
+  mask-image: url(icons/ghost-shadow.svg);
+}
+
+.dahlia-happy-face {
+  -webkit-mask-image: url(icons/happy-face.svg);
+  mask-image: url(icons/happy-face.svg);
+}
+
+.dahlia-heart-symbol {
+  -webkit-mask-image: url(icons/heart-symbol.svg);
+  mask-image: url(icons/heart-symbol.svg);
+}
+
+.dahlia-lion-king {
+  -webkit-mask-image: url(icons/lion-king.svg);
+  mask-image: url(icons/lion-king.svg);
+}
+
+.dahlia-locked-castle {
+  -webkit-mask-image: url(icons/locked-castle.svg);
+  mask-image: url(icons/locked-castle.svg);
+}
+
+.dahlia-magic-wand {
+  -webkit-mask-image: url(icons/magic-wand.svg);
+  mask-image: url(icons/magic-wand.svg);
+}
+
+.dahlia-moon-at-night {
+  -webkit-mask-image: url(icons/moon-at-night.svg);
+  mask-image: url(icons/moon-at-night.svg);
+}
+
+.dahlia-old-parchment {
+  -webkit-mask-image: url(icons/old-parchment.svg);
+  mask-image: url(icons/old-parchment.svg);
+}
+
+.dahlia-pencil-ruler {
+  -webkit-mask-image: url(icons/pencil-ruler.svg);
+  mask-image: url(icons/pencil-ruler.svg);
+}
+
+.dahlia-pirate-ship {
+  -webkit-mask-image: url(icons/pirate-ship.svg);
+  mask-image: url(icons/pirate-ship.svg);
+}
+
+.dahlia-planet-ring {
+  -webkit-mask-image: url(icons/planet-ring.svg);
+  mask-image: url(icons/planet-ring.svg);
+}
+
+.dahlia-potion-bottle {
+  -webkit-mask-image: url(icons/potion-bottle.svg);
+  mask-image: url(icons/potion-bottle.svg);
+}
+
+.dahlia-robot-face {
+  -webkit-mask-image: url(icons/robot-face.svg);
+  mask-image: url(icons/robot-face.svg);
+}
+
+.dahlia-royal-crown {
+  -webkit-mask-image: url(icons/royal-crown.svg);
+  mask-image: url(icons/royal-crown.svg);
+}
+
+.dahlia-ship-wheel {
+  -webkit-mask-image: url(icons/ship-wheel.svg);
+  mask-image: url(icons/ship-wheel.svg);
+}
+
+.dahlia-sly-fox {
+  -webkit-mask-image: url(icons/sly-fox.svg);
+  mask-image: url(icons/sly-fox.svg);
+}
+
+.dahlia-smiling-face {
+  -webkit-mask-image: url(icons/smiling-face.svg);
+  mask-image: url(icons/smiling-face.svg);
+}
+
+.dahlia-space-rocket {
+  -webkit-mask-image: url(icons/space-rocket.svg);
+  mask-image: url(icons/space-rocket.svg);
+}
+
+.dahlia-stacked-books {
+  -webkit-mask-image: url(icons/stacked-books.svg);
+  mask-image: url(icons/stacked-books.svg);
+}
+
+.dahlia-stories-book {
+  -webkit-mask-image: url(icons/stories-book.svg);
+  mask-image: url(icons/stories-book.svg);
+}
+
+.dahlia-sword {
+  -webkit-mask-image: url(icons/sword.svg);
+  mask-image: url(icons/sword.svg);
+}
+
+.dahlia-tale-of-dragons {
+  -webkit-mask-image: url(icons/tale-of-dragons.svg);
+  mask-image: url(icons/tale-of-dragons.svg);
+}
+
+.dahlia-teacher-lesson {
+  -webkit-mask-image: url(icons/teacher-lesson.svg);
+  mask-image: url(icons/teacher-lesson.svg);
+}
+
+.dahlia-theater-masks {
+  -webkit-mask-image: url(icons/theater-masks.svg);
+  mask-image: url(icons/theater-masks.svg);
+}
+
+.dahlia-tree-leaf {
+  -webkit-mask-image: url(icons/tree-leaf.svg);
+  mask-image: url(icons/tree-leaf.svg);
+}
+
+.dahlia-unicorn-horn {
+  -webkit-mask-image: url(icons/unicorn-horn.svg);
+  mask-image: url(icons/unicorn-horn.svg);
+}
+
+.dahlia-viking-helmet {
+  -webkit-mask-image: url(icons/viking-helmet.svg);
+  mask-image: url(icons/viking-helmet.svg);
+}
+
+.dahlia-waves {
+  -webkit-mask-image: url(icons/waves.svg);
+  mask-image: url(icons/waves.svg);
+}
