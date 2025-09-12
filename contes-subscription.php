@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Contes Subscription
  * Description: Site-specific subscription logic for managing roles, memberships, and integrations with other plugins.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Tu Nombre
  * Text Domain: contes-subscription
  * Domain Path: /languages
