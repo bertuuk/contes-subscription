@@ -30,6 +30,7 @@ require_once CONTES_SUBSCRIPTION_PATH . 'includes/roles.php';
 require_once CONTES_SUBSCRIPTION_PATH . 'includes/favorites.php';
 require_once CONTES_SUBSCRIPTION_PATH . 'includes/post-views.php';
 require_once CONTES_SUBSCRIPTION_PATH . 'includes/month-post-views.php';
+require_once CONTES_SUBSCRIPTION_PATH . 'includes/story-values.php';
 
 // Initialize components
 add_action('plugins_loaded', function () {
