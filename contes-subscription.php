@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Contes Subscription
  * Description: Site-specific subscription logic for managing roles, memberships, and integrations with other plugins.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Tu Nombre
  * Text Domain: contes-subscription
  * Domain Path: /languages
@@ -30,6 +30,7 @@ require_once CONTES_SUBSCRIPTION_PATH . 'includes/roles.php';
 require_once CONTES_SUBSCRIPTION_PATH . 'includes/favorites.php';
 require_once CONTES_SUBSCRIPTION_PATH . 'includes/post-views.php';
 require_once CONTES_SUBSCRIPTION_PATH . 'includes/month-post-views.php';
+require_once CONTES_SUBSCRIPTION_PATH . 'includes/story-values.php';
 
 // Initialize components
 add_action('plugins_loaded', function () {

@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: {
         main: './assets/js/main.js', // Ruta de tu archivo JS/React
+        'story-values': './assets/js/story-values.js',
         style: './assets/sass/style.scss',   // Archivo principal SCSS
         icons: './assets/sass/_icons.scss',   // Archivo principal SCSS
     },
@@ -49,5 +50,5 @@ module.exports = {
         })
     ],
     mode: 'development', // Cambia a 'production' para compilar para producción
-    watch: true // Observa cambios en los archivos
+    watch: process.env.NODE_ENV === 'development' // Observa cambios solo en desarrollo
 };
