@@ -5,6 +5,32 @@ if (!defined('ABSPATH')) {
 }
 
 define('CONTES_STORY_VALUES_META_KEY', 'contes_story_values');
+define('CONTES_STORY_VALUES_TAXONOMY', 'story_value');
+
+function contes_subscription_register_story_values_taxonomy() {
+    $labels = [
+        'name'              => __('Story values', 'contes-subscription'),
+        'singular_name'     => __('Story value', 'contes-subscription'),
+        'search_items'      => __('Search story values', 'contes-subscription'),
+        'all_items'         => __('All story values', 'contes-subscription'),
+        'edit_item'         => __('Edit story value', 'contes-subscription'),
+        'update_item'       => __('Update story value', 'contes-subscription'),
+        'add_new_item'      => __('Add new story value', 'contes-subscription'),
+        'new_item_name'     => __('New story value name', 'contes-subscription'),
+        'menu_name'         => __('Story values', 'contes-subscription'),
+    ];
+
+    register_taxonomy(CONTES_STORY_VALUES_TAXONOMY, ['post'], [
+        'labels' => $labels,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+        'hierarchical' => false,
+        'rewrite' => ['slug' => 'story-value'],
+    ]);
+}
+add_action('init', 'contes_subscription_register_story_values_taxonomy');
 
 function contes_subscription_sanitize_story_values($values) {
     if (!is_array($values)) {
@@ -19,84 +45,50 @@ function contes_subscription_sanitize_story_values($values) {
     return array_values(array_unique($values));
 }
 
-function contes_subscription_register_story_values_meta() {
-    register_post_meta('post', CONTES_STORY_VALUES_META_KEY, [
-        'type' => 'array',
-        'single' => true,
-        'default' => [],
-        'show_in_rest' => [
-            'schema' => [
-                'type' => 'array',
-                'items' => [
-                    'type' => 'string',
-                ],
-            ],
-        ],
-        'sanitize_callback' => 'contes_subscription_sanitize_story_values',
-        'auth_callback' => function () {
-            return current_user_can('edit_posts');
-        },
-    ]);
-}
-add_action('init', 'contes_subscription_register_story_values_meta');
-
-function contes_subscription_get_story_values() {
-    global $wpdb;
-
-    $raw_values = $wpdb->get_col(
-        $wpdb->prepare(
-            "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key = %s",
-            CONTES_STORY_VALUES_META_KEY
-        )
-    );
-
-    $values = [];
-    foreach ($raw_values as $raw_value) {
-        $maybe_array = maybe_unserialize($raw_value);
-        if (is_array($maybe_array)) {
-            $values = array_merge($values, $maybe_array);
-        } elseif (is_string($maybe_array)) {
-            $values[] = $maybe_array;
-        }
+function contes_subscription_migrate_story_values_to_taxonomy() {
+    if (get_option('contes_story_values_migrated')) {
+        return;
     }
 
-    $values = contes_subscription_sanitize_story_values($values);
-
-    return rest_ensure_response($values);
-}
-
-function contes_subscription_register_story_values_route() {
-    register_rest_route('contes-subscription/v1', '/story-values', [
-        'methods' => WP_REST_Server::READABLE,
-        'callback' => 'contes_subscription_get_story_values',
-        'permission_callback' => function () {
-            return current_user_can('edit_posts');
-        },
-    ]);
-}
-add_action('rest_api_init', 'contes_subscription_register_story_values_route');
-
-function contes_subscription_story_values_editor_assets() {
-    $asset_path = CONTES_SUBSCRIPTION_PATH . 'build/story-values.bundle.js';
-
-    wp_enqueue_script(
-        'contes-subscription-story-values',
-        CONTES_SUBSCRIPTION_URL . 'build/story-values.bundle.js',
-        ['wp-element', 'wp-components', 'wp-data', 'wp-edit-post', 'wp-plugins', 'wp-i18n', 'wp-api-fetch'],
-        file_exists($asset_path) ? filemtime($asset_path) : CONTES_SUBSCRIPTION_VERSION,
-        true
-    );
-
-    wp_localize_script('contes-subscription-story-values', 'contesStoryValues', [
-        'metaKey' => CONTES_STORY_VALUES_META_KEY,
-        'nonce' => wp_create_nonce('wp_rest'),
-        'restPath' => '/contes-subscription/v1/story-values',
+    $query = new WP_Query([
+        'post_type' => 'post',
+        'post_status' => 'any',
+        'posts_per_page' => -1,
+        'fields' => 'ids',
+        'meta_key' => CONTES_STORY_VALUES_META_KEY,
     ]);
 
-    wp_add_inline_script(
-        'contes-subscription-story-values',
-        'wp.apiFetch.use( wp.apiFetch.createNonceMiddleware( contesStoryValues.nonce ) );',
-        'before'
-    );
+    if (empty($query->posts)) {
+        update_option('contes_story_values_migrated', 1);
+        return;
+    }
+
+    foreach ($query->posts as $post_id) {
+        $raw_values = get_post_meta($post_id, CONTES_STORY_VALUES_META_KEY, true);
+        $values = contes_subscription_sanitize_story_values(is_array($raw_values) ? $raw_values : []);
+        if (empty($values)) {
+            continue;
+        }
+
+        $term_ids = [];
+        foreach ($values as $value) {
+            $term = term_exists($value, CONTES_STORY_VALUES_TAXONOMY);
+            if (!$term) {
+                $term = wp_insert_term($value, CONTES_STORY_VALUES_TAXONOMY);
+            }
+            if (!is_wp_error($term)) {
+                $term_ids[] = (int) $term['term_id'];
+            }
+        }
+
+        if (!empty($term_ids)) {
+            wp_set_object_terms($post_id, $term_ids, CONTES_STORY_VALUES_TAXONOMY, true);
+        }
+
+        // Clean up legacy meta after migration.
+        delete_post_meta($post_id, CONTES_STORY_VALUES_META_KEY);
+    }
+
+    update_option('contes_story_values_migrated', 1);
 }
-add_action('enqueue_block_editor_assets', 'contes_subscription_story_values_editor_assets');
+add_action('admin_init', 'contes_subscription_migrate_story_values_to_taxonomy');
