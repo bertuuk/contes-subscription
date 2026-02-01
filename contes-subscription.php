@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Contes Subscription
  * Description: Site-specific subscription logic for managing roles, memberships, and integrations with other plugins.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Tu Nombre
  * Text Domain: contes-subscription
  * Domain Path: /languages
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('CONTES_SUBSCRIPTION_VERSION', '1.0.0');
+define('CONTES_SUBSCRIPTION_VERSION', '1.1.2');
 define('CONTES_SUBSCRIPTION_PATH', plugin_dir_path(__FILE__));
 define('CONTES_SUBSCRIPTION_URL', plugin_dir_url(__FILE__));
 
