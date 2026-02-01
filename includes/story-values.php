@@ -22,12 +22,14 @@ function contes_subscription_register_story_values_taxonomy() {
 
     register_taxonomy(CONTES_STORY_VALUES_TAXONOMY, ['post'], [
         'labels' => $labels,
-        'public' => true,
+        'public' => false,
         'show_ui' => true,
+        'publicly_queryable' => false,
         'show_in_rest' => true,
         'show_admin_column' => true,
         'hierarchical' => false,
-        'rewrite' => ['slug' => 'story-value'],
+        'rewrite' => false,
+        'query_var' => false,
     ]);
 }
 add_action('init', 'contes_subscription_register_story_values_taxonomy');
