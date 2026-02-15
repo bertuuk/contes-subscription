@@ -1,0 +1,38 @@
+.contes-tabs {
+    margin-top: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccd0d4;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.contes-tabs .nav-tab {
+    padding: 8px 12px;
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: none;
+    background: #f1f1f1;
+    color: #50575e;
+}
+
+.contes-tabs .nav-tab:hover {
+    background: #fafafa;
+}
+
+.contes-tabs .nav-tab-active {
+    background: #ffffff;
+    border: 1px solid #ccd0d4;
+    border-bottom: 1px solid #ffffff;
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.contes-tab-content {
+    margin-top: 0;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+}

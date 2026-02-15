@@ -5,6 +5,8 @@ module.exports = {
     entry: {
         main: './assets/js/main.js', // Ruta de tu archivo JS/React
         'story-values': './assets/js/story-values.js',
+        'post-access': './assets/js/post-access.js',
+        'post-grid-controls': './assets/js/post-grid-controls.js',
         style: './assets/sass/style.scss',   // Archivo principal SCSS
         icons: './assets/sass/_icons.scss',   // Archivo principal SCSS
     },
