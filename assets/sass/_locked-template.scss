@@ -1,0 +1,76 @@
+.contes-locked-template {
+  padding: 48px 16px 64px;
+}
+
+.contes-locked {
+  display: flex;
+  justify-content: center;
+}
+
+.contes-locked__inner {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.contes-locked__icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: var(--wp--preset--color--color-primary-01, #f2f2f2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contes-locked__icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--wp--preset--color--color-primary-07, #4a4a4a);
+}
+
+.contes-locked__title {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.contes-locked__description {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.contes-locked__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contes-locked__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.contes-locked__button--primary {
+  background: var(--wp--preset--color--color-primary-07, #4a4a4a);
+  color: var(--wp--preset--color--color-primary-01, #f2f2f2);
+}
+
+.contes-locked__button--secondary {
+  background: transparent;
+  border-color: var(--wp--preset--color--color-primary-07, #4a4a4a);
+  color: var(--wp--preset--color--color-primary-07, #4a4a4a);
+}

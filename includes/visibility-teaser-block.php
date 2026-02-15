@@ -8,6 +8,10 @@ function contes_subscription_get_visibility_teaser_defaults() {
 	$message = get_option( 'contes_visibility_teaser_message', $default_message );
 	$button_label = get_option( 'contes_visibility_teaser_button_label', $default_button_label );
 	$button_url = get_option( 'contes_visibility_teaser_button_url', $default_button_url );
+	$button_page_id = absint( get_option( 'contes_visibility_teaser_button_page_id', 0 ) );
+	if ( $button_page_id ) {
+		$button_url = get_permalink( $button_page_id );
+	}
 	$teaser_height = get_option( 'contes_visibility_teaser_height', 120 );
 	$teaser_block_count = get_option( 'contes_visibility_teaser_block_count', 2 );
 	$background_color = get_option( 'contes_visibility_teaser_background_color', '#ffffff' );
